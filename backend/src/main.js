@@ -18,6 +18,11 @@ const app=express()
 app.use(cors())
 app.use(express.json())
 
+app.get('/', (req, res) => {
+  res.send("Backend is running");
+});
+
+
 app.use('/api/products',router)
 
 app.use('/api/orders',orderRouter)
@@ -27,6 +32,7 @@ app.use('/api/cart',cartRouter)
 app.use('/api/register',registerRouter)
 
 app.use('/api/login',LoginRouter)
+
 
 app.listen(PORT,()=>{
     console.log("server Listening");
