@@ -1,11 +1,6 @@
 # MERN Ecommerce
 
-[![License](https://img.shields.io/badge/License-MIT-blue)](https://opensource.org/licenses/MIT)
-[![Node.js](https://img.shields.io/badge/Node.js-18.x-green)](https://nodejs.org/)
-[![React](https://img.shields.io/badge/React-18.x-blue)](https://reactjs.org/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-5.x-green)](https://www.mongodb.com/)
-[![Vite](https://img.shields.io/badge/Vite-5.x-blue)](https://vitejs.dev/)
-[![JWT](https://img.shields.io/badge/JWT-Auth-orange)](https://jwt.io/)
+[![License](https://img.shields.io/badge/License-MIT-blue)](https://opensource.org/licenses/MIT) [![Node.js](https://img.shields.io/badge/Node.js-18.x-green)](https://nodejs.org/) [![React](https://img.shields.io/badge/React-18.x-blue)](https://reactjs.org/) [![MongoDB](https://img.shields.io/badge/MongoDB-5.x-green)](https://www.mongodb.com/) [![Vite](https://img.shields.io/badge/Vite-5.x-blue)](https://vitejs.dev/) [![JWT](https://img.shields.io/badge/JWT-Auth-orange)](https://jwt.io/)
 
 A full-stack MERN Ecommerce application with JWT authentication (localStorage), cart and order management.
 
