@@ -12,7 +12,6 @@ export default function Cart() {
   const BASE_URL = "https://mern-ecommerce-back-j8ux.onrender.com";
 
   useEffect(() => {
-    console.log(token);
     if (!token) {
       console.log("No token, redirect to login!");
     }
