@@ -69,3 +69,47 @@ frontend/
 │  └─ main.jsx
 ├─ package.json
 └─ vite.config.js
+```
+Setup & Run
+
+Clone repository
+
+Backend: install dependencies, create .env, run dev server
+
+Frontend: install dependencies, run dev server
+
+API Endpoints
+
+Auth: register, login
+
+Cart: add item, get items, delete item
+
+Orders: create order, get orders, delete order
+
+Authentication
+
+JWT token stored in localStorage
+
+Axios configured to send token in headers
+
+Backend verifies token using middleware
+
+Notes
+
+Do not push node_modules and .env to GitHub
+
+JWT in localStorage is for learning/testing only
+
+For production, use secure cookies and HTTPS
+
+
+---
+
+### ✅ Why it looks perfect now
+Because:
+✔ Structure is inside a code block  
+✔ Proper indentation  
+✔ GitHub renders it clean  
+✔ One block, no scroll, no separation  
+
+If you want I can also add **API table**, **screenshots**, or **deployment section**.
