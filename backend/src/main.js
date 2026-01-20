@@ -10,6 +10,7 @@ import cartRouter from './routers/cart_Router.js'
 import registerRouter from './routers/register_router.js'
 import LoginRouter from './routers/login_Router.js'
 
+const PORT = process.env.PORT || 5000
 
  connectDB()
 
@@ -27,7 +28,7 @@ app.use('/api/register',registerRouter)
 
 app.use('/api/login',LoginRouter)
 
-app.listen(5001,()=>{
+app.listen(PORT,()=>{
     console.log("server Listening");
     
 })
