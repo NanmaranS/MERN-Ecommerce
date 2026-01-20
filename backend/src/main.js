@@ -10,7 +10,7 @@ import cartRouter from './routers/cart_Router.js'
 import registerRouter from './routers/register_router.js'
 import LoginRouter from './routers/login_Router.js'
 
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5001
 
  connectDB()
 
