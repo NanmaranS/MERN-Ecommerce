@@ -17,9 +17,9 @@ A full-stack MERN Ecommerce application with JWT authentication (localStorage), 
 - React + Vite frontend
 
 ## Tech Stack
-Backend: Node.js, Express, MongoDB, Mongoose, JWT  
-Frontend: React, Vite, Axios  
-Authentication: JWT stored in localStorage
+**Backend:** Node.js, Express, MongoDB, Mongoose, JWT  
+**Frontend:** React, Vite, Axios  
+**Authentication:** JWT stored in localStorage
 
 ## Project Structure
 ```txt
@@ -70,22 +70,25 @@ frontend/
 ├─ package.json
 └─ vite.config.js
 ```
-Setup & Run
+Setup (All in one)
 
-Clone repository
-
-Backend: install dependencies, create .env, run dev server
-
-Frontend: install dependencies, run dev server
+Clone repository → Backend: cd backend → npm install → create .env → npm run dev → Frontend: cd frontend → npm install → npm run dev
 
 API Endpoints
-
-Auth: register, login
-
-Cart: add item, get items, delete item
-
-Orders: create order, get orders, delete order
-
+Auth
+Route	Method	Description
+/api/register	POST	Register new user
+/api/login	POST	Login user & get JWT token
+Cart
+Route	Method	Description
+/api/cart	POST	Add item to cart
+/api/cart	GET	Get all cart items
+/api/cart/:id	DELETE	Delete cart item
+Orders
+Route	Method	Description
+/api/order	POST	Create order
+/api/order	GET	Get all orders
+/api/order/:id	DELETE	Delete order
 Authentication
 
 JWT token stored in localStorage
@@ -103,13 +106,7 @@ JWT in localStorage is for learning/testing only
 For production, use secure cookies and HTTPS
 
 
----
+✅ This is **neat, professional, and one block**.  
+Copy once and paste once.
 
-### ✅ Why it looks perfect now
-Because:
-✔ Structure is inside a code block  
-✔ Proper indentation  
-✔ GitHub renders it clean  
-✔ One block, no scroll, no separation  
-
-If you want I can also add **API table**, **screenshots**, or **deployment section**.
+If you want the **same but with fewer lines (more compact)** or **more professional style**, tell me.
