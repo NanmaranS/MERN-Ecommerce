@@ -1,0 +1,20 @@
+.goback {
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.goback:hover {
+  color: rgb(196, 26, 26);
+  transform: scale(1.1);
+}
+.login-link{
+  text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+.fixed-left-form{
+  margin-left: -200px;
+}
