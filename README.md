@@ -28,32 +28,51 @@ Authentication: JWT stored in localStorage
 
 ## Project Structure
 backend/
-  ├─ src/
-  │  ├─ controllers/ (register_controller.js, login_controller.js, cart_controller.js, order_controller.js)
-  │  ├─ routes/ (register_router.js, login_router.js, cart_router.js, order_router.js, router.js)
-  │  ├─ models/ (register.js, cart.js, orders.js)
-  │  ├─ middleware/ (authMiddleware.js)
-  │  ├─ config/ (db.js)
-  │  ├─ main.js
-  │  └─ .env
-  ├─ package.json
+├─ src/
+│  ├─ controllers/
+│  │  ├─ register_controller.js
+│  │  ├─ login_controller.js
+│  │  ├─ cart_controller.js
+│  │  └─ order_controller.js
+│  ├─ routes/
+│  │  ├─ register_router.js
+│  │  ├─ login_router.js
+│  │  ├─ cart_router.js
+│  │  ├─ order_router.js
+│  │  └─ router.js
+│  ├─ models/
+│  │  ├─ register.js
+│  │  ├─ cart.js
+│  │  └─ orders.js
+│  ├─ middleware/
+│  │  └─ authMiddleware.js
+│  ├─ config/
+│  │  └─ db.js
+│  ├─ main.js
+│  └─ .env
+├─ package.json
 
 frontend/
-  ├─ src/
-  │  ├─ components/
-  │  │  ├─ body.jsx
-  │  │  ├─ body.css
-  │  │  ├─ header.jsx
-  │  │  ├─ header.css
-  │  │  ├─ footer.jsx
-  │  │  └─ footer.css
-  │  ├─ pages/ (cart.jsx, order.jsx, login.jsx, register.jsx, goback.jsx)
-  │  ├─ App.jsx
-  │  ├─ app.css
-  │  ├─ index.css
-  │  └─ main.jsx
-  ├─ package.json
-  └─ vite.config.js
+├─ src/
+│  ├─ components/
+│  │  ├─ body.jsx
+│  │  ├─ body.css
+│  │  ├─ header.jsx
+│  │  ├─ header.css
+│  │  ├─ footer.jsx
+│  │  └─ footer.css
+│  ├─ pages/
+│  │  ├─ cart.jsx
+│  │  ├─ order.jsx
+│  │  ├─ login.jsx
+│  │  ├─ register.jsx
+│  │  └─ goback.jsx
+│  ├─ App.jsx
+│  ├─ app.css
+│  ├─ index.css
+│  └─ main.jsx
+├─ package.json
+└─ vite.config.js
 
 ## Setup & Run
 1. Clone repository  
