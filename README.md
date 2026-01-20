@@ -22,7 +22,7 @@ Frontend: React, Vite, Axios
 Authentication: JWT stored in localStorage
 
 ## Project Structure
-backend/
+## backend/
 ├─ src/
 │  ├─ controllers/
 │  │  ├─ register_controller.js
@@ -47,7 +47,7 @@ backend/
 │  └─ .env
 ├─ package.json
 
-frontend/
+## frontend/
 ├─ src/
 │  ├─ components/
 │  │  ├─ body.jsx
