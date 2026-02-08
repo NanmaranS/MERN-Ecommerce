@@ -1,20 +1,20 @@
 import jwt from 'jsonwebtoken'
 
-const authMiddleware=(req,res,next)=>{
-
+const authMiddleware = (req, res, next) => {
   try {
-    const authHeader =req.headers.authorization
+    const token = req.cookies.token
 
-   if(!authHeader || !authHeader.startsWith("Bearer ") ) return res.status(401).json("token not provided")
+    if (!token) {
+      return res.status(401).json({ msg: "Login required" })
+    }
 
-   const token=authHeader.split(" ")[1]
-   
-   const decode=jwt.verify(token,process.env.JWT_SECRET)
-   req.user=decode
-   next()
-  } catch (error) {
-    
-    res.status(500).json(error.message)
-  }  
+    const decoded = jwt.verify(token, process.env.JWT_SECRET)
+    req.user = decoded
+    next()
+
+  } catch (err) {
+    res.status(401).json({ msg: "Invalid or expired token" })
+  }
 }
+
 export default authMiddleware

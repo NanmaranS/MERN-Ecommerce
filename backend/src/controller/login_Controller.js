@@ -22,8 +22,13 @@ if(!user) return res.status(401).json("username or password invalid")
     {id:user._id,username:user.username}, process.env.JWT_SECRET,
     {expiresIn:"10d"}
   )
-  res.status(200).json({token})
+  res.cookie("token", token, {
+  httpOnly: true,
+    secure: true,     
+  sameSite: "none"
+}).status(200).json({token})
   } catch (error) {
     res.status(500).json(error.message)
   }
 }
+

@@ -6,25 +6,19 @@ import Goback from './Goback'
 export default function Cart() {
 
   const [cart, setCart] = useState([])
-  const token = localStorage.getItem('token')
   const nav = useNavigate()
 
-  const BASE_URL = "https://mern-ecommerce-back-j8ux.onrender.com";
+  const BASE_URL = "https://mern-ecommerce-back-j8ux.onrender.com"
 
   useEffect(() => {
-    if (!token) {
-      console.log("No token, redirect to login!");
-    }
 
     axios.get(`${BASE_URL}/api/cart`, {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
+       withCredentials: true 
     })
       .then((res) => setCart(res.data))
       .catch((err) => console.log(err.message))
 
-  }, [token])
+  }, [])
 
   const orderCart = (cart) => {
     axios.post(`${BASE_URL}/api/orders`, {
@@ -34,9 +28,7 @@ export default function Cart() {
       p_price: cart.p_price,
       p_rating: cart.p_rating,
     }, {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
+      withCredentials: true 
     })
       .then((res) => {
         setCart(res.data)
@@ -47,9 +39,7 @@ export default function Cart() {
 
   const cartCancel = (cart) => {
     axios.delete(`${BASE_URL}/api/cart/${cart._id}`, {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
+      withCredentials: true 
     })
       .then((res) => {
         setCart(prev => prev.filter((del) => del._id !== cart._id))

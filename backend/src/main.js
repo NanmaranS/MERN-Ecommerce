@@ -1,5 +1,4 @@
 import dotenv from 'dotenv'
-dotenv.config()
 
 import express from 'express'
 import router from './routers/router.js'
@@ -9,15 +8,20 @@ import orderRouter from './routers/order_router.js'
 import cartRouter from './routers/cart_Router.js'
 import registerRouter from './routers/register_router.js'
 import LoginRouter from './routers/login_Router.js'
+import cookieParser from 'cookie-parser'
 
 const PORT = process.env.PORT || 5001
 
+dotenv.config()
  connectDB()
 
 const app=express()
-app.use(cors())
+app.use(cors({
+  origin: 'https://mern-ecommerce-frontend-0jer.onrender.com',
+  credentials: true
+}))
 app.use(express.json())
-
+app.use(cookieParser())  
 app.get('/', (req, res) => {
   res.send("Backend is running");
 });
