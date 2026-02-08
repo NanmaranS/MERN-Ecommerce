@@ -8,7 +8,7 @@ export default function Cart() {
   const [cart, setCart] = useState([])
   const nav = useNavigate()
 
-  const BASE_URL = "https://mern-ecommerce-back-j8ux.onrender.com"
+  const BASE_URL = "https://mern-ecommerce-back-j8ux.onrender.com";
 
   useEffect(() => {
 
