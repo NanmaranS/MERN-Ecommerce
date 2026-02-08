@@ -27,8 +27,8 @@ export async function deleteCart(req,res){
     try {
         const id=req.params.id
     const cartRemove=await cartModel.findOneAndDelete({
-        userId:id,
-       _id: req.user.id
+         _id:id,
+       userId: req.user.id
     })
     res.status(200).json(cartRemove)
     } catch (error) {

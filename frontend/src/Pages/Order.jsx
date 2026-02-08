@@ -8,10 +8,9 @@ export default function Order() {
 
   const BASE_URL = "https://mern-ecommerce-back-j8ux.onrender.com"
 
-  // GET ORDERS (cookie auto sent)
   useEffect(() => {
     axios.get(`${BASE_URL}/api/orders`, {
-      withCredentials: true // ✅ SEND COOKIE
+      withCredentials: true 
     })
       .then((res) => {
         setOrder(res.data)
@@ -22,13 +21,12 @@ export default function Order() {
       })
   }, [])
 
-  // CANCEL ORDER (cookie auto sent)
   const cancelOrd = async (prod) => {
     try {
       await axios.delete(
         `${BASE_URL}/api/orders/${prod._id}`,
         {
-          withCredentials: true // ✅ SEND COOKIE
+          withCredentials: true 
         }
       )
 
