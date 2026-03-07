@@ -18,7 +18,12 @@ export async function postLogin(req, res) {
       { expiresIn: "10d" }
     );
 
-    res.cookie("token", token, { httpOnly: false, secure: false }).status(200).json({ token });
+res.cookie("token", token, {
+  httpOnly: true,        // safer
+  secure: true,          // must be true on HTTPS
+  sameSite: "none",      // allows cross-site cookies
+  maxAge: 10 * 24 * 60 * 60 * 1000 // 10 days
+}).status(200).json({ token });
   } catch (error) {
     res.status(500).json(error.message);
   }
