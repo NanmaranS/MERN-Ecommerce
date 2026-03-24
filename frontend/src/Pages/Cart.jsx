@@ -8,9 +8,8 @@ export default function Cart() {
   const [cart, setCart] = useState([])
   const nav = useNavigate()
 
-  // const BASE_URL = 'http://localhost:5001'//localhost
-
-    const BASE_URL = "https://mern-ecommerce-back-j8ux.onrender.com"; 
+  // const BASE_URL = 'http://localhost:5001'
+  const BASE_URL = "https://mern-ecommerce-back-j8ux.onrender.com" 
 
   useEffect(() => {
 
@@ -43,7 +42,7 @@ export default function Cart() {
     axios.delete(`${BASE_URL}/api/cart/${cart._id}`, {
       withCredentials: true 
     })
-      .then((res) => {
+      .then(() => {
         setCart(prev => prev.filter((del) => del._id !== cart._id))
         alert(`${cart.p_name} Cart Removed`)
       })
@@ -53,32 +52,76 @@ export default function Cart() {
   return (
     <div className='container pt-5 mt-5'>
       <Goback />
-      <div className="row g-5 mt-3 ">
+
+      <div className="row g-4 mt-3">
+
         {cart.length > 0 && cart.map((cart) => (
-          <div key={cart._id} className="col-12  col-md-6 col-lg-4">
-            <div className="p-5 card text-center ">
-              <div className='d-flex justify-content-center'>
-                <img src={cart.p_image} className="card-img-top " alt="..." style={{ height: "400px", objectFit: "cover" }} />
+
+          <div key={cart._id} className="col-12 col-md-6 col-lg-4">
+
+            <div className="card h-100 shadow-sm">
+
+              <div
+                style={{
+                  height: "250px",
+                  overflow: "hidden"
+                }}
+              >
+                <img
+                  src={cart.p_image}
+                  alt={cart.p_name}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover"
+                  }}
+                />
               </div>
-              <div className="card-body">
-                <h5 className="card-title">{cart.p_name}</h5>
-                <p className="card-text"><b> Price $ </b>{cart.p_price}</p>
-                <p className="card-text"><b>Rating  </b>⭐{cart.p_rating}</p>
-                <p className="card-text" style={{
+
+              <div className="card-body text-center">
+
+                <h5>{cart.p_name}</h5>
+
+                <p><b>Price $</b> {cart.p_price}</p>
+
+                <p><b>Rating</b> ⭐{cart.p_rating}</p>
+
+                <p style={{
                   overflow: "hidden",
                   whiteSpace: "nowrap",
                   textOverflow: "ellipsis"
                 }}>
-                  <b>Description :</b>{cart.p_desc}
+                  <b>Description :</b> {cart.p_desc}
                 </p>
 
-                <button className='btn btn-success me-5' onClick={() => { orderCart(cart) }}>Order Now</button>
-                <button className='btn btn-danger' onClick={() => { cartCancel(cart) }}>Remove Cart</button>
               </div>
+
+              <div className="card-footer bg-white border-0 text-center">
+
+                <button
+                  className='btn btn-success me-3'
+                  onClick={() => orderCart(cart)}
+                >
+                  Order Now
+                </button>
+
+                <button
+                  className='btn btn-danger'
+                  onClick={() => cartCancel(cart)}
+                >
+                  Remove Cart
+                </button>
+
+              </div>
+
             </div>
+
           </div>
+
         ))}
+
       </div>
+
     </div>
   )
 }

@@ -19,7 +19,7 @@ export default function Register() {
     e.preventDefault(); // 
     console.log('Form submitted');
 
-    axios.post('https://mern-ecommerce-back-j8ux.onrender.com/api/register',{
+    axios.post('https://mern-ecommerce-back-j8ux.onrender.com/register',{
       username:Username,
       password:Password
     })

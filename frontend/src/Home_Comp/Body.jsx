@@ -3,11 +3,11 @@ import { useNavigate } from "react-router-dom"
 import axios from 'axios'
 import './Body.css'
 
-export default function Body() {
+export default function Body({ search }) {
   const [products, setProducts] = useState([])
   const nav = useNavigate()
 
-  //  const BASE_URL = 'http://localhost:5001' //localhost
+  // const BASE_URL = 'http://localhost:5001' //localhost
   
   const BASE_URL = "https://mern-ecommerce-back-j8ux.onrender.com" 
 
@@ -54,38 +54,75 @@ export default function Body() {
 
   return (
     <div className='container mt-5'>
-      <div className='row g-5'>
-        {products.map((prod) => (
-          <div className='col-12 col-md-6 col-lg-4' key={prod._id}>
-            <div className="card p-2">
-              <img
-                src={prod.p_image}
-                className="card-img-top"
-                alt={prod.p_name}
-                height="400"
-                style={{ objectFit: "cover" }}
-              />
+      <div className='row g-4'>
+        {
+          products
+            .filter((prod) =>
+              prod.p_name.toLowerCase().includes(search.toLowerCase()) ||
+              prod.p_desc.toLowerCase().includes(search.toLowerCase())
+            )
+            .map((prod) => (
+              <div className='col-12 col-md-6 col-lg-3' key={prod._id}>
+                <div className="card p-2 h-100 shadow-sm">
 
-              <div className="card-body text-center">
-                <h5>{prod.p_name}</h5>
-                <p><b>Price $</b> {prod.p_price}</p>
-                <p><b>Rating</b> ⭐{prod.p_rating}</p>
-                <p style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
-                  <b>Description :</b> {prod.p_desc}
-                </p>
-              </div>
+                  {/* Image container for clean alignment */}
+                  <div
+                    style={{
+                      height: "250px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      background: "#fff",
+                      padding: "10px"
+                    }}
+                  >
+                   <img
+  src={prod.p_image}
+  alt={prod.p_name}
+  style={{
+    height: "100%",
+    width: "100%",
+    objectFit: "cover",
+    borderRadius: "6px"
+  }}
+/>
+                  </div>
 
-              <div className="card-footer bg-white border-0 text-center">
-                <button className="btn btn-outline-success m-3" onClick={() => buyProd(prod)}>
-                  Buy Now
-                </button>
-                <button className="btn btn-outline-danger" onClick={() => cartProd(prod)}>
-                  Add Cart
-                </button>
+                  <div className="card-body text-center">
+                    <h5>{prod.p_name}</h5>
+                    <p><b>Price $</b> {prod.p_price}</p>
+                    <p><b>Rating</b> ⭐{prod.p_rating}</p>
+
+                    <p style={{
+                      whiteSpace: "nowrap",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis"
+                    }}>
+                      <b>Description :</b> {prod.p_desc}
+                    </p>
+
+                  </div>
+
+                  <div className="card-footer bg-white border-0 text-center">
+                    <button
+                      className="btn btn-outline-success m-3"
+                      onClick={() => buyProd(prod)}
+                    >
+                      Buy Now
+                    </button>
+
+                    <button
+                      className="btn btn-outline-danger"
+                      onClick={() => cartProd(prod)}
+                    >
+                      Add Cart
+                    </button>
+                  </div>
+
+                </div>
               </div>
-            </div>
-          </div>
-        ))}
+            ))
+        }
       </div>
     </div>
   )

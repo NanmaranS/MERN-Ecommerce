@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom'
 import './Header.css'
 
-export default function Header() {
+export default function Header({setSearch}) {
+  
+  
   return (
     <div className="header py-4  d-flex align-items-center justify-content-between">
 
@@ -10,15 +12,10 @@ export default function Header() {
 
      
       <div className="search-box">
-        <input type="text" placeholder="Search products..." />
+        <input type="text" placeholder="Search products..." 
+          onChange={(e)=>setSearch(e.target.value)}
+/>
       </div>
-{/*next week
-
-1.search product
-2.Product Image Upload Cloudinary
-3.Loading Neat Ui
-
- */}
    
       <div className="menu">
         <Link to="/login" className="head-link">
