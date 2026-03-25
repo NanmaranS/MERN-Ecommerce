@@ -7,7 +7,6 @@ A full-stack e-commerce application built with the MERN stack featuring authenti
 ## 🌐 Live Demo
 
 Frontend: https://mern-ecommerce-frontend-0jer.onrender.com
-Backend: https://mern-ecommerce-back-j8ux.onrender.com
 
 ---
 
