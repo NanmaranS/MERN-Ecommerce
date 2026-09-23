@@ -4,6 +4,8 @@ import Goback from '../Goback_Button/Goback'
 import './Register.css'
 import { Link,useNavigate } from 'react-router-dom';
 export default function Register() {
+  //const BASE_URL = 'http://localhost:5000'
+   const BASE_URL = "https://mern-ecommerce-back-j8ux.onrender.com" 
 
   const [Username,setUsername]=useState("")
   const[Password,setPassword]=useState("")
@@ -16,7 +18,7 @@ export default function Register() {
     e.preventDefault(); // 
     console.log('Form submitted');
 
-    axios.post('http://localhost:5000/api/register',{
+    axios.post(`${BASE_URL}/api/register`,{
       username:Username,
       password:Password
     })

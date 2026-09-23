@@ -7,9 +7,9 @@ export default function Body({ search }) {
   const [products, setProducts] = useState([])
   const nav = useNavigate()
 
-  const BASE_URL = 'http://localhost:5000' //localhost
+  // const BASE_URL = 'http://localhost:5000' //localhost
   
-  // const BASE_URL = "https://mern-ecommerce-back-j8ux.onrender.com" 
+  const BASE_URL = "https://mern-ecommerce-back-j8ux.onrender.com" 
 
   useEffect(() => {
     axios.get(`${BASE_URL}/api/products`)

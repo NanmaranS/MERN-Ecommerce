@@ -10,9 +10,9 @@ export default function Login() {
   const[error,setError]=useState("")
   const nav = useNavigate()
 
-    const BASE_URL = 'http://localhost:5000'//localhost
+    //const BASE_URL = 'http://localhost:5000'//localhost
   
-  //  const BASE_URL = "https://mern-ecommerce-back-j8ux.onrender.com"; 
+    const BASE_URL = "https://mern-ecommerce-back-j8ux.onrender.com"; 
 
   const handleSubmit = (e) => {
     e.preventDefault()
