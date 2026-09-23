@@ -23,7 +23,6 @@ export default function Register() {
       password:Password
     })
     .then((res)=>{
-      console.log(res.data);
       setUsername('')
       setPassword('')
       setError("")
