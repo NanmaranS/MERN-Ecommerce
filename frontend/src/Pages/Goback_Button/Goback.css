@@ -1,0 +1,52 @@
+.goback-wrapper {
+  margin-bottom: 20px;
+}
+
+.goback {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.85);
+  color: #222;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(8px);
+  transition: all 0.25s ease;
+}
+
+.goback i {
+  font-size: 18px;
+  transition: transform 0.25s ease;
+}
+
+.goback:hover {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+  transform: translateX(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.goback:hover i {
+  transform: translateX(-3px);
+}
+
+.goback:active {
+  transform: translateX(-1px) scale(0.97);
+}
+
+@media (max-width: 576px) {
+  .goback {
+    padding: 8px 13px;
+    font-size: 14px;
+  }
+
+  .goback i {
+    font-size: 17px;
+  }
+}

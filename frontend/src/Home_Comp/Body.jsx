@@ -7,9 +7,9 @@ export default function Body({ search }) {
   const [products, setProducts] = useState([])
   const nav = useNavigate()
 
-  // const BASE_URL = 'http://localhost:5001' //localhost
+  const BASE_URL = 'http://localhost:5000' //localhost
   
-  const BASE_URL = "https://mern-ecommerce-back-j8ux.onrender.com" 
+  // const BASE_URL = "https://mern-ecommerce-back-j8ux.onrender.com" 
 
   useEffect(() => {
     axios.get(`${BASE_URL}/api/products`)
@@ -33,7 +33,13 @@ export default function Body({ search }) {
         alert(`Processing ${prod.p_name}`)
         nav('/orders')
       })
-      .catch(() => alert("Please login first"))
+.catch((err) => {
+  if (err.response?.status === 401) {
+    alert("Please login first")
+  } else {
+    alert("Something went wrong")
+  }
+})
   }
 
   const cartProd = (prod) => {
@@ -49,81 +55,148 @@ export default function Body({ search }) {
       { withCredentials: true }
     )
       .then(() => nav('/cart'))
-      .catch(() => alert("Please login first"))
+      
+.catch((err) => {
+  if (err.response?.status === 401) {
+    alert("Please login first")
+  } else if (err.response?.status === 409) {
+    alert("This product is already in your cart")
+  } else {
+    alert("Something went wrong")
   }
+})  }
 
-  return (
-    <div className='container mt-5'>
-      <div className='row g-4'>
+return (
+  <div className="products-page">
+
+    {/* Animated background */}
+
+    <div className="products-bg-glow glow-green"></div>
+    <div className="products-bg-glow glow-orange"></div>
+    <div className="products-bg-glow glow-blue"></div>
+
+
+    <div className="container mt-5">
+
+      <div className="row g-4">
+
         {
           products
             .filter((prod) =>
-              prod.p_name.toLowerCase().includes(search.toLowerCase()) ||
-              prod.p_desc.toLowerCase().includes(search.toLowerCase())
+              prod.p_name
+                .toLowerCase()
+                .includes(search.toLowerCase()) ||
+
+              prod.p_desc
+                .toLowerCase()
+                .includes(search.toLowerCase())
             )
             .map((prod) => (
-              <div className='col-12 col-md-6 col-lg-3' key={prod._id}>
-                <div className="card p-2 h-100 shadow-sm">
 
-                  {/* Image container for clean alignment */}
-                  <div
-                    style={{
-                      height: "250px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      background: "#fff",
-                      padding: "10px"
-                    }}
-                  >
-                   <img
-  src={prod.p_image}
-  alt={prod.p_name}
-  style={{
-    height: "100%",
-    width: "100%",
-    objectFit: "cover",
-    borderRadius: "6px"
-  }}
-/>
+              <div
+                className="col-12 col-md-6 col-lg-3 product-column"
+                key={prod._id}
+              >
+
+                <div className="card product-card p-2 h-100">
+
+
+                  {/* IMAGE */}
+
+                  <div className="product-image-container">
+
+                    <div className="image-shine"></div>
+
+                    <img
+                      src={prod.p_image}
+                      alt={prod.p_name}
+                      className="product-image"
+                    />
+
                   </div>
 
-                  <div className="card-body text-center">
-                    <h5>{prod.p_name}</h5>
-                    <p><b>Price $</b> {prod.p_price}</p>
-                    <p><b>Rating</b> ⭐{prod.p_rating}</p>
 
-                    <p style={{
-                      whiteSpace: "nowrap",
-                      overflow: "hidden",
-                      textOverflow: "ellipsis"
-                    }}>
-                      <b>Description :</b> {prod.p_desc}
+                  {/* PRODUCT DETAILS */}
+
+                  <div className="card-body text-center">
+
+                    {/* PRODUCT NAME */}
+
+                    <h5 className="product-title">
+                      {prod.p_name}
+                    </h5>
+
+
+                    {/* PRICE */}
+
+                    <div className="product-price">
+
+                      <span className="price-label">
+                        Price
+                      </span>
+
+                      <span className="price-value">
+                        ₹{prod.p_price}
+                      </span>
+
+                    </div>
+
+
+                    {/* RATING */}
+
+                    <div className="product-rating">
+
+                      <span className="rating-label">
+                        Rating
+                      </span>
+
+                      <span className="rating-value">
+                        ⭐ {prod.p_rating}
+                      </span>
+
+                    </div>
+
+
+                    {/* DESCRIPTION */}
+
+                    <p className="product-description">
+                      {prod.p_desc}
                     </p>
 
                   </div>
 
-                  <div className="card-footer bg-white border-0 text-center">
+
+                  {/* BUTTONS */}
+
+                  <div className="card-footer product-footer">
+
                     <button
-                      className="btn btn-outline-success m-3"
+                      className="btn btn-outline-success product-btn buy-btn"
                       onClick={() => buyProd(prod)}
                     >
                       Buy Now
                     </button>
 
                     <button
-                      className="btn btn-outline-danger"
+                      className="btn btn-outline-danger product-btn cart-btn"
                       onClick={() => cartProd(prod)}
                     >
                       Add Cart
                     </button>
+
                   </div>
 
                 </div>
+
               </div>
+
             ))
         }
+
       </div>
+
     </div>
-  )
+
+  </div>
+)
 }
