@@ -227,6 +227,12 @@ npm run dev
 
 ---
 
+## 🎥 Project Demo
+
+https://github.com/user-attachments/assets/e4c60a2a-fbcd-4c0a-8c29-9dfebda2b28a
+
+---
+
 ## 📸 Screenshots
 
 ### 🏠 Home Page
