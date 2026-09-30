@@ -231,23 +231,23 @@ npm run dev
 
 ### 🏠 Home Page
 
-<img width="1919" height="1029" alt="Home Page" src="https://github.com/user-attachments/assets/7af3f3a6-82ee-4e62-a212-8a78b6606896" />
+![Home Page](https://github.com/user-attachments/assets/7af3f3a6-82ee-4e62-a212-8a78b6606896)
 
 ### 📝 Register Page
 
-<img width="1919" height="1031" alt="Register Page" src="https://github.com/user-attachments/assets/db38462d-f0c8-42e1-965d-cfa20bbc7046" />
+![Register Page](https://github.com/user-attachments/assets/db38462d-f0c8-42e1-965d-cfa20bbc7046)
 
 ### 🔐 Login Page
 
-<img width="1919" height="1029" alt="Login Page" src="https://github.com/user-attachments/assets/cf7a8605-ba22-4f8f-bf2a-603fc1b734f2" />
+![Login Page](https://github.com/user-attachments/assets/cf7a8605-ba22-4f8f-bf2a-603fc1b734f2)
 
 ### 🛒 Cart Page
 
-<img width="1919" height="1031" alt="Cart Page" src="https://github.com/user-attachments/assets/a5ff94ed-7759-47e0-b9e9-f61641cdafe1" />
+![Cart Page](https://github.com/user-attachments/assets/a5ff94ed-7759-47e0-b9e9-f61641cdafe1)
 
 ### 📦 Orders Page
 
-<img width="1919" height="1031" alt="Orders Page" src="https://github.com/user-attachments/assets/1b5fc495-d2d5-4319-9dd6-c2daac367e95" />
+![Orders Page](https://github.com/user-attachments/assets/1b5fc495-d2d5-4319-9dd6-c2daac367e95)
 
 ---
 
