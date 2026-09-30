@@ -39,7 +39,7 @@ https://mern-ecommerce-frontend-0jer.onrender.com
 
 ## 🧑‍💻 Technologies Used
 
-**Frontend**
+### Frontend
 
 - React.js
 - JavaScript
@@ -48,17 +48,17 @@ https://mern-ecommerce-frontend-0jer.onrender.com
 - Bootstrap
 - Axios
 
-**Backend**
+### Backend
 
 - Node.js
 - Express.js
 
-**Database**
+### Database
 
 - MongoDB
 - Mongoose
 
-**Authentication & Security**
+### Authentication & Security
 
 - JWT (JSON Web Token)
 - HTTP-only Cookies
@@ -70,7 +70,7 @@ https://mern-ecommerce-frontend-0jer.onrender.com
 
 - User registration and login system
 - Passwords are hashed using bcrypt
-- JWT is used for authentication
+- JWT is used for user authentication
 - JWT is stored in HTTP-only cookies
 - Protected API routes verify authenticated users
 - Each user can access only their own cart and orders
@@ -79,13 +79,13 @@ https://mern-ecommerce-frontend-0jer.onrender.com
 
 ## 🛒 Cart & Order System
 
-**Cart**
+### Cart
 
 - Add products to cart
 - View user-specific cart
 - Remove products from cart
 
-**Orders**
+### Orders
 
 - Create orders
 - View user-specific orders
@@ -97,67 +97,123 @@ https://mern-ecommerce-frontend-0jer.onrender.com
 
 Users can search for products by name.
 
-The application fetches product data from the backend API and displays the matching products.
+The application fetches product data through the backend API and displays the matching products.
 
 ---
 
 ## 📁 Project Structure
 
-~~~text
+~~~~text
 MERN-Ecommerce/
 │
-├── frontend/
-│   └── React Application
+├── backend/
+│   └── src/
+│       ├── config/
+│       │   └── db.js
+│       │
+│       ├── controller/
+│       │   ├── cart_Controller.js
+│       │   ├── login_Controller.js
+│       │   ├── orderController.js
+│       │   ├── productsController.js
+│       │   └── register_Controller.js
+│       │
+│       ├── middleware/
+│       │   └── authMiddleware.js
+│       │
+│       ├── Models/
+│       │   ├── Cart.js
+│       │   ├── Orders.js
+│       │   ├── ProductsList.js
+│       │   └── Register.js
+│       │
+│       ├── routers/
+│       │   ├── cartRouter.js
+│       │   ├── loginRouter.js
+│       │   ├── orderRouter.js
+│       │   ├── registerRouter.js
+│       │   └── router.js
+│       │
+│       └── main.js
 │
-└── backend/
-    ├── Routes
-    ├── Controllers
-    ├── Models
-    ├── Authentication
-    └── Database Configuration
-~~~
+├── frontend/
+│   └── src/
+│       ├── Home_Comp/
+│       │   ├── Header.jsx
+│       │   ├── Header.css
+│       │   ├── Footer.jsx
+│       │   ├── Footer.css
+│       │   ├── Body.jsx
+│       │   └── Body.css
+│       │
+│       ├── pages/
+│       │   ├── Cart/
+│       │   │   ├── Cart.jsx
+│       │   │   └── Cart.css
+│       │   │
+│       │   ├── Order/
+│       │   │   ├── Order.jsx
+│       │   │   └── Order.css
+│       │   │
+│       │   ├── Login/
+│       │   │   ├── Login.jsx
+│       │   │   └── Login.css
+│       │   │
+│       │   ├── Register/
+│       │   │   ├── Register.jsx
+│       │   │   └── Register.css
+│       │   │
+│       │   └── Goback_Button/
+│       │       ├── Goback.css
+│       │       └── Goback.jsx
+│       │
+│       ├── App.jsx
+│       ├── App.css
+│       ├── index.css
+│       └── main.jsx
+~~~~
 
 ---
 
 ## ⚙️ Installation & Setup
 
-**1. Clone the Repository**
+### 1. Clone the Repository
 
-~~~bash
+~~~~bash
 git clone https://github.com/NanmaranS/MERN-Ecommerce.git
 cd MERN-Ecommerce
-~~~
+~~~~
 
-**2. Setup Backend**
+### 2. Setup Backend
 
-~~~bash
+~~~~bash
 cd backend
 npm install
-~~~
+~~~~
 
 Create a `.env` file:
 
-~~~env
+~~~~env
 PORT=5001
 MONGO_URI=your_mongodb_connection
 JWT_SECRET=your_secret_key
-~~~
+~~~~
 
 Start the backend:
 
-~~~bash
+~~~~bash
 npm start
-~~~
+~~~~
 
-**3. Setup Frontend**
+### 3. Setup Frontend
 
 Open another terminal:
 
-~~~bash
+~~~~bash
 cd frontend
 npm install
 npm run dev
-~~~
+~~~~
 
 ---
 
@@ -173,30 +229,25 @@ npm run dev
 
 ## 📸 Screenshots
 
-**🏠 Home Page**
+### 🏠 Home Page
 
-<img width="1919" height="1029" alt="Home" src="https://github.com/user-attachments/assets/7af3f3a6-82ee-4e62-a212-8a78b6606896" />
+<img width="1919" height="1029" alt="Home Page" src="https://github.com/user-attachments/assets/7af3f3a6-82ee-4e62-a212-8a78b6606896" />
 
+### 📝 Register Page
 
-**📝 Register Page**
+<img width="1919" height="1031" alt="Register Page" src="https://github.com/user-attachments/assets/db38462d-f0c8-42e1-965d-cfa20bbc7046" />
 
-<img width="1919" height="1031" alt="Register_Page" src="https://github.com/user-attachments/assets/db38462d-f0c8-42e1-965d-cfa20bbc7046" />
+### 🔐 Login Page
 
+<img width="1919" height="1029" alt="Login Page" src="https://github.com/user-attachments/assets/cf7a8605-ba22-4f8f-bf2a-603fc1b734f2" />
 
-**🔐 Login Page**
-<img width="1919" height="1029" alt="Login_Page" src="https://github.com/user-attachments/assets/cf7a8605-ba22-4f8f-bf2a-603fc1b734f2" />
+### 🛒 Cart Page
 
+<img width="1919" height="1031" alt="Cart Page" src="https://github.com/user-attachments/assets/a5ff94ed-7759-47e0-b9e9-f61641cdafe1" />
 
-**🛒 Cart Page**
+### 📦 Orders Page
 
-<img width="1919" height="1031" alt="Cart_Page" src="https://github.com/user-attachments/assets/a5ff94ed-7759-47e0-b9e9-f61641cdafe1" />
-
-
-
-**📦 Orders Page**
-
-<img width="1919" height="1031" alt="Order_Page" src="https://github.com/user-attachments/assets/1b5fc495-d2d5-4319-9dd6-c2daac367e95" />
-
+<img width="1919" height="1031" alt="Orders Page" src="https://github.com/user-attachments/assets/1b5fc495-d2d5-4319-9dd6-c2daac367e95" />
 
 ---
 
